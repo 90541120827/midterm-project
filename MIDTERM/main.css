@@ -1,0 +1,443 @@
+*{ 
+    box-sizing: border-box; 
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(bckgrnd.jpeg);
+    background-size: cover;
+    background-position: center;
+    color: #333;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+    margin: 1rem;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    background-color: transparent;
+    color: #fff;
+    padding: 1rem;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0 1rem;
+}
+
+header a:hover {
+    color: #ccc;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 1rem;
+    padding: 1rem;
+}
+
+main section {
+    padding: 1rem;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+main h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #446688;
+}
+
+main h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #446688;
+}
+
+main p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    color: #555;}
+    
+      
+      
+footer {
+    background-color: transparent;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-right: 1rem;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.2s ease-in-out;
+}
+
+nav ul li a:hover {
+    background-color: #fff;
+    color: #446688;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+    padding: 1rem;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.8);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin: 1rem 0;
+}
+.fade-in h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .fade-in p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+
+.animate-slide-in {
+    animation:
+        slideIn 1s ease-in-out;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.akatsuki-members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.akatsuki-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    height: 300px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.akatsuki-card img {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+}
+
+.akatsuki-card h3 {
+    margin-top: 1rem;
+    font-weight: bold;
+    color: #446688;
+}
+
+.akatsuki-card:hover {
+    transform: translateY(-10px);
+}
+
+.akatsuki-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    width: 100%;
+    max-width: 600px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.akatsuki-info h2 {
+    margin-top: 0;
+    font-size: 2rem;
+}
+
+.akatsuki-info p {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+.akatsuki-card:focus .akatsuki-info {
+    visibility: visible;
+    opacity: 1;
+}
+
+.akatsuki-info::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.akatsuki-info::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    border-top: 10px solid rgba(0, 0, 0, 0.4);
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+}
+
+.akatsuki-card--hidden .akatsuki-info {
+    visibility: visible;
+    opacity: 1;
+}
+
+.akatsuki-info--hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.akatsuki-info--hidden::before, .akatsuki-info--hidden::after {
+    content: none;
+}
+
+.akatsuki-card--hidden .akatsuki-info::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.akatsuki-card--hidden .akatsuki-info::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    border-top: 10px solid rgba(255, 255, 255, 0.8);
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+}
+
+.akatsuki-card--hidden:focus .akatsuki-info {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.akatsuki-card--hidden:focus .akatsuki-info::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.akatsuki-card--hidden:focus .akatsuki-info::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    border-top: 10px solid rgba(255, 255, 255, 0.8);
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+}
+
+.akatsuki-card--hidden:focus .akatsuki-info::before, .akatsuki-card--hidden:focus .akatsuki-info::after {
+    transition: none;
+}
+
+@media (max-width: 768px) {
+    .akatsuki-members {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .akatsuki-card {
+        width: 100%;
+        height: auto;
+    }
+
+    .akatsuki-info {
+        max-width: 100%;
+        top: 0;
+        left: 0;
+        transform: translate(0, 0);
+        transform-origin: left;
+    }
+
+    .akatsuki-info::before {
+        content: none;
+    }
+
+    .akatsuki-info::after {
+        content: "";
+        position: absolute;
+        top: 0;
+       left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: rgba(0, 0, 0, 0.4);
+        transform-origin: left;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .akatsuki-card:focus .akatsuki-info::after {
+        transform: rotate(180deg);
+    }
+
+    .akatsuki-card:focus .akatsuki-info {
+        transform: translateX(0);
+    }
+
+    .akatsuki-card--hidden .akatsuki-info {
+        transform: translateX(-100%);
+    }
+
+    .akatsuki-card--hidden .akatsuki-info::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: rgba(255, 255, 255, 0.8);
+        transform-origin: left;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .akatsuki-card--hidden:focus .akatsuki-info::after, .akatsuki-card--hidden:focus .akatsuki-info {
+        transform: translateX(0);
+        transform-origin: left;
+    }
+
+    .akatsuki-card--hidden:focus .akatsuki-info {
+        transform: translateX(0);
+    }
+
+    .akatsuki-card--hidden:focus .akatsuki-info::after {
+        transform: rotate(0deg);
+    }
+
+    .akatsuki-card--hidden .akatsuki-info {
+        animation: akatsukiInfoExit 0.3s ease-in-out forwards;
+    }
+
+    .akatsuki-info--hidden {
+        display: none;
+    }
+
+    .akatsuki-card:not(.akatsuki-card--hidden) .akatsuki-info {
+        animation:akatsukiInfoEnter 0.3s ease-in-out forwards;
+    }
+
+    @keyframes akatsukiInfoEnter {
+        to {
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes akatsukiInfoExit {
+        to {
+            transform: translateX(-100%);
+        }
+    }
+
+    .akatsuki-card--hidden:focus .akatsuki-info {
+        animation: none;
+    }
+
+    .akatsuki-card--hidden:focus .akatsuki-info::after {
+        animation: none;
+    }
+
+    .akatsuki-info--hidden {
+        display: block;
+    }
+
+    .akatsuki-info--hidden::after {
+        transform: rotate(0deg);
+    }
+
+}
