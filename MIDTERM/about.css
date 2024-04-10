@@ -1,0 +1,179 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+background-image: url(bckgrnd.jpeg);
+  background-size: cover;
+  
+  color: #333;
+}
+  
+  footer {
+    background-color:transparent;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    
+  }
+  
+  footer p {
+    margin: 0;
+  }
+  .logo {
+    width: 100px;
+    height: auto;
+    margin: 1rem;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin-right: 1rem;
+}
+
+nav ul li:last-child {
+  margin-right: 0;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s ease-in-out;
+}
+
+nav ul li a:hover {
+  background-color: #fff;
+  color: #446688;
+}
+@media (max-width: 768px) {
+  header {
+      flex-direction: column;
+  }
+
+  nav ul {
+      flex-direction: column;
+  }
+
+  nav ul li {
+      margin-right: 0;
+      margin-bottom: 1rem;
+  }
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+  background-color: transparent;
+  color: #fff;
+  padding: 1rem;
+}
+
+header a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0 1rem;
+}
+
+header a:hover {
+  color: #ccc;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 1rem;
+  padding: 1rem;
+}
+
+main section {
+  padding: 1rem;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+main h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #446688;
+}
+
+main h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #446688;
+}
+
+main p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  color: #555;}
+  .about-us {
+    padding: 1rem;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 1rem 0;
+  }
+  
+  .about-us h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .about-us p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+  
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+    }
+  
+    nav ul {
+      flex-direction: column;
+    }
+  
+    nav ul li {
+      margin-right: 0;
+      margin-bottom: 1rem;
+    }
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .fade-in {
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  @keyframes slideIn {
+    0% {
+      transform: translateX(-100%);
+    }
+  
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  .animate-slide-in {
+    animation: slideIn 1s ease-in-out;
+  }
